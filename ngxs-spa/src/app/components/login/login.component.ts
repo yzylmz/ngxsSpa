@@ -22,12 +22,11 @@ export class LoginComponent implements OnInit {
   alertMessage: string = "";
 
   ngOnInit() {
-    const isAuthenticated = this.store.selectSnapshot(AuthState.getStatus);
 
-    if (isAuthenticated == true) { 
-      this.router.navigate(['/']);
-    } else {
-      this.router.navigate(['/login']);
+    if (localStorage.getItem('token') == "true") {
+      this.store.dispatch(new ChangeStatus({ authStatus: true })).subscribe(() => {
+        this.router.navigate(['/']);
+      });
     }
   }
 
@@ -35,7 +34,7 @@ export class LoginComponent implements OnInit {
 
     const authRes = this.loginService.checkUser(this.username, this.password);
     if (authRes == true) {
-      this.alertMessage = ""; 
+      this.alertMessage = "";
       this.store.dispatch(new ChangeStatus({ authStatus: authRes })).subscribe(() => {
         this.router.navigate(['/']);
       });
