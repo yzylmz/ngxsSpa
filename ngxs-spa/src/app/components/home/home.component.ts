@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
 
   Logout() {
     this.store.dispatch(new ChangeStatus({ authStatus: false })).subscribe(() => {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/login']); 
     });
   }
 
