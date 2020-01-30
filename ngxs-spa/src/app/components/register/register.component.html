@@ -6,7 +6,7 @@
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
                         <form id="login-form" class="form">
-                            <h3 class="text-center  ">Login Page</h3>
+                            <h3 class="text-center  ">Register Page</h3>
 
                             <div class="form-group">
                                 <div *ngIf="alertMessage != '' " class="alert alert-danger" role="alert">
@@ -25,12 +25,12 @@
                             <br>
 
                             <div class="form-group text-center">
-                                <button class="btn btn-success btn-md" (click)="login()">Login </button>
+                                <button class="btn btn-success btn-md"   (click)="register()"> Register </button>
 
                             </div>
 
                             <div class="form-group text-center">
-                                <button class="btn btn-primary btn-md"  routerLink="/register"> Register </button>
+                                <button class="btn btn-primary btn-md" routerLink="/login" >Login </button>
                             </div>
 
                         </form>

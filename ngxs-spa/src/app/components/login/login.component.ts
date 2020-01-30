@@ -21,8 +21,7 @@ export class LoginComponent implements OnInit {
 
   alertMessage: string = "";
 
-  ngOnInit() {
-
+  ngOnInit() { 
     if (localStorage.getItem('token') == "true") {
       this.store.dispatch(new ChangeStatus({ authStatus: true })).subscribe(() => {
         this.router.navigate(['/']);
@@ -30,8 +29,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  Login() {
-
+  login() { 
     const authRes = this.loginService.checkUser(this.username, this.password);
     if (authRes == true) {
       this.alertMessage = "";
@@ -39,8 +37,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/']);
       });
     } else {
-      this.alertMessage = "Kullanıcı adı veya şifre hatalı!"
-    }
-
+      this.alertMessage = "Login failed: Invalid username or password!"
+    } 
   }
 }

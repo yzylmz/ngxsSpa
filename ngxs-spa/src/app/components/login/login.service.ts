@@ -1,24 +1,15 @@
 import { Injectable } from '@angular/core';
- 
+import { RegisterService } from '../register.service';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  constructor() { }
-
-  dummyUsername: string = "admin"
-  dummyPassword: string = "cloudfactory"
-
-  status: boolean;
+  constructor(private registerService: RegisterService) { }
 
   checkUser(username: string, password: string): boolean {
-    if (username == this.dummyUsername && password == this.dummyPassword) {  
-      this.status = true;
-    } else {
-      this.status = false;
-    }
-    return this.status;
+    return this.registerService.checkUser(username, password);
   }
 }

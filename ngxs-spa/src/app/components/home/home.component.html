@@ -1,40 +1,7 @@
 <div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <app-header (LogoutChild)="Logout()"></app-header>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-            <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link active " href="#">HOME <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link active" href="#">PAGES</a>
-                <a class="nav-item nav-link active" href="#">PORTFOLIO</a>
-                <a class="nav-item nav-link active" href="#">BLOG</a>
-                <a class="nav-item nav-link active" href="#">FEATURES</a>
-                <a class="nav-item nav-link active" href="#">COMPONENTS</a>
+    <app-content></app-content>
 
-                <a (click)="Logout()" class="nav-item nav-link active font-weight-bold" href="#">LOGOUT</a>
-
-            </div>
-        </div>
-    </nav>
-
-    <div class="row">
-        <div class="container bg-no-overlay">
-
-            <div class="row text-left">
-                <h6> WELCOME TO ALTIUS </h6>
-            </div>
-            <div class="row text-left">
-
-                <h5>A powerful template, designed for corporates, creative agencies and freelancers.</h5>
-
-            </div>
-
-            <div class="row text-left align-items-center">
-                <button type="button" class="btn btn-danger">Get Started Now</button>
-            </div>
-        </div>
-    </div>
+    <app-footer></app-footer>
 </div>

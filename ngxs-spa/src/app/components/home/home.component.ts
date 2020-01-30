@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Actions, ofActionDispatched, Store } from '@ngxs/store';
 import { Router } from '@angular/router';
 import { ChangeStatus } from 'src/app/state/auth.action';
@@ -12,6 +12,7 @@ import { AuthState } from 'src/app/state/auth.state';
 })
 export class HomeComponent implements OnInit {
 
+ 
   constructor(private store: Store, private router: Router) { }
 
   ngOnInit() {
